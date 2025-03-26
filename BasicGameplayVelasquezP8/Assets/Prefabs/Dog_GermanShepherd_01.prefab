@@ -5937,6 +5937,9 @@ GameObject:
   - component: {fileID: 1316699238064583564}
   - component: {fileID: 2522620153297905457}
   - component: {fileID: 4665351371573719634}
+  - component: {fileID: 1223964098367951289}
+  - component: {fileID: 7929219860662036921}
+  - component: {fileID: 8920689180967814053}
   m_Layer: 0
   m_Name: Dog_GermanShepherd_01
   m_TagString: Untagged
@@ -5953,7 +5956,7 @@ Transform:
   m_GameObject: {fileID: 9018679874018394915}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.011110425, y: 0, z: 1.069314}
+  m_LocalPosition: {x: -0.11, y: 0, z: 1.069314}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6030,6 +6033,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+--- !u!65 &1223964098367951289
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9018679874018394915}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.06272093, y: 0.2673773, z: 0.2915598}
+  m_Center: {x: -0.0006551325, y: 0.089427955, z: -0.0010450602}
+--- !u!114 &7929219860662036921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9018679874018394915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc33683e03def041ab117797f7510cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8920689180967814053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9018679874018394915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8641ffc2e9ea6fa458375211160efe26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9055810243141854828
 GameObject:
   m_ObjectHideFlags: 0
