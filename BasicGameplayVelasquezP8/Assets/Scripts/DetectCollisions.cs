@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DetectCollisions : MonoBehaviour
 {
+    public int playerHealth = 3;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +21,22 @@ public class DetectCollisions : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
-        Destroy(other.gameObject);
+        if (other.gameObject.tag == "Enemy")
+        {
+            HealthDecrementer();
+        }
+        else
+        {
+            Destroy(gameObject);
+            Debug.Log("GameOver!!");
+        }
+        
+
+        void HealthDecrementer()
+        {
+            playerHealth = playerHealth - 1;
+            Debug.Log("Lol");
+            Debug.Log("Health = " + playerHealth);
+        }
     }
 }
