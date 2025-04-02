@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class DetectCollisions : MonoBehaviour
@@ -21,6 +22,13 @@ public class DetectCollisions : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
+        //CHeck if the other tag was the Player, if it was remove a life
+        if (other.CompareTag("Player"))
+        {
+            GameManagerDependencyInfo.AddLives(-1);
+            Destroy(gameObject);
+        }
         if (other.gameObject.tag == "Enemy")
         {
             HealthDecrementer();
@@ -28,7 +36,7 @@ public class DetectCollisions : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            Debug.Log("GameOver!!");
+            Debug.Log("Game Over!!");
         }
         
 
