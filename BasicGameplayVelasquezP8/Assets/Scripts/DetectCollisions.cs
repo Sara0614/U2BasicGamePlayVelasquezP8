@@ -6,12 +6,13 @@ using UnityEngine;
 public class DetectCollisions : MonoBehaviour
 {
     public int playerHealth = 3;
+    private GameManager gameManager;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -26,19 +27,16 @@ public class DetectCollisions : MonoBehaviour
         //CHeck if the other tag was the Player, if it was remove a life
         if (other.CompareTag("Player"))
         {
-            GameManagerDependencyInfo.AddLives(-1);
+            gameManager.AddLives(-1);
             Destroy(gameObject);
         }
-        if (other.gameObject.tag == "Enemy")
+        else if (other.CompareTag("Animal"))
         {
-            HealthDecrementer();
-        }
-        else
-        {
+            gameManager.AddScore(5);
             Destroy(gameObject);
-            Debug.Log("Game Over!!");
+            Destroy(other.gameObject);
         }
-        
+
 
         void HealthDecrementer()
         {
