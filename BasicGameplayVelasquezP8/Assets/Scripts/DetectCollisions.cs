@@ -32,17 +32,12 @@ public class DetectCollisions : MonoBehaviour
         }
         else if (other.CompareTag("Animal"))
         {
-            gameManager.AddScore(5);
+            other.GetComponent<AnimalHunger>().FeedAnimal(1);
             Destroy(gameObject);
-            Destroy(other.gameObject);
+            
         }
 
 
-        void HealthDecrementer()
-        {
-            playerHealth = playerHealth - 1;
-            Debug.Log("Lol");
-            Debug.Log("Health = " + playerHealth);
-        }
+       
     }
 }
